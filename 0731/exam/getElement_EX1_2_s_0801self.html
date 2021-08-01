@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+  <title> new document </title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+   body,div,img,p,h3{margin:0;padding:0;}
+   .wrap{width:500px; border:1px solid #e1e1e1; padding:5px; position:relative; top:50px; left:100px;}
+   h3{background-color:#f4f4f4; height:20px; padding:10px 0 0 20px; margin-bottom:10px; border-bottom:1px solid #e1e1e1;}
+   body{font-size:12px; color:#000; font-family:"돋움";}
+   p.text{background-color:#f4f4f4; border:1px solid #e1e1e1; margin-top:10px; padding:5px; line-height:17px;}
+   h3{font-size:100%;}
+   input{margin-top:10px;}
+  </style>
+
+  <script type="text/javascript">
+   function movieImgChange(num) {
+      document.getElementById('pic').src = 'images_1/movie'+num+'.jpg';
+   }
+
+   function txtAlignChange(num) {
+      if(num == 0){
+         document.getElementById('comment').style.backgroundColor = 'yellow';
+         document.getElementById('comment').style.textAlign = 'left';
+      }
+      else if(num == 1){
+         document.getElementById('comment').style.backgroundColor = 'orange';
+         document.getElementById('comment').style.textAlign = 'center';
+      }
+      else{
+         document.getElementById('comment').style.backgroundColor = 'pink';
+         document.getElementById('comment').style.textAlign = 'right';
+      }  
+   }
+
+  </script>
+ </head>
+
+ <body>
+ <div class="wrap">
+	<h3>도둑들</h3>
+		<p><img src="images_1/movie1.jpg" alt="영화1" width="500" id="pic" /></p>
+	   <input type="button"  value="영화1" onclick="movieImgChange(1)"/>
+		<input type="button"  value="영화2" onclick="movieImgChange(2)"/>
+		<input type="button"  value="영화3" onclick="movieImgChange(3)"/>
+
+		<p class="text" id="comment" style="background-color:#ffffff;">10인의 도둑, 1개의 다이아몬드 그들이 움직이기 시작했다!
+			한 팀으로 활동 중인 한국의 도둑 뽀빠이와 예니콜, 씹던껌, 잠파노. 미술관을 터는데 멋지게 성공한 이들은 뽀빠이의 과거 파트너였던 마카오박이 제안한 홍콩에서의 새로운 계획을 듣게 된다. 여기에 마카오박이 초대하지 않은 손님, 감옥에서 막 출소한 금고털이 팹시가 합류하고 5명은 각자 인생 최고의 반전을 꿈꾸며 홍콩으로 향한다...</p>
+		
+		<!--색상만작업-->
+		<input type="button"  value="left" onclick="txtAlignChange(0)" />
+		<input type="button"  value="center" onclick="txtAlignChange(1)" />
+		<input type="button"  value="right" onclick="txtAlignChange(2)"/>
+	</div>
+</body>
+</html>
