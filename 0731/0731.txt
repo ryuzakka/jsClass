@@ -1,0 +1,29 @@
+javascript_class
+010-4057-6001
+
+
+getElement...
+
+innerHTML
+(2시)
+innerHTML 예제
+
+getAttribute
+setAttribute
+
+** a 태그와 onclick 이 만나면 onclick이 우선하고, a태그의 href 링크 기능이 후에 실행함.
+이를 막기 위해서 return false를 선언.
+
+hasAttribute ; 값(속성)의 유무에 따라 T/F 반환
+removeAttribute ; 값(속성) 삭제
+
+createElement()
+createTextNode()
+appendChild()
+insertBefore()
+append() ; 생성된 노드를 요소가 끝나기 전에 삽입
+
+자식노드를 찾을 때
+1. childNodes - 공백 텍스트 포함
+2. children - 공백 텍스트 미포함
+

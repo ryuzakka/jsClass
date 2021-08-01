@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        function getId(){
+            document.getElementById('getId').style.color="red";
+        }
+        function getTag(){
+            document.getElementsByTagName('div')[0].style.color="blue"; //Tag는 여러번 사용하는 경우가 많기 때문에 순서를 지정해야 함.
+        }
+        function classBtn(){
+            document.getElementsByClassName('text')[0].style.color="green";  //Class는 여러번 사용하는 경우가 많기 때문에 순서를 지정해야 함.
+        }
+        function nameBtn(){
+            var x = document.getElementsByName('dom');
+            //console.log(x);
+            for(let i=0; i<x.length; i++){
+                if(x[i].type=="text"){
+                    x[i].style.border="2px solid red";
+                }
+            }
+        }
+
+        // className 변경하기 테스트 
+        function classBtn_add(){
+            var x = document.getElementsByClassName('divText')[0];
+            x.className = "divText over";
+            x.className = "divText";
+            x.classList.add('myclass', 'anotherclass'); //classList는 IE10 이후부터 적용가능 
+        }
+        function classBtn_remove(){
+            var x = document.getElementsByClassName('divText')[0];//
+            x.classList.remove('myclass'); //classList는 IE10 이후부터 적용가능 
+        }
+        function classBtn_toggle(){
+            var x = document.getElementsByClassName('divText')[0];//
+            x.classList.toggle('newClassName'); //classList는 IE10 이후부터 적용가능 
+        }
+        function classBtn_contains(){
+            var x = document.getElementsByClassName('divText')[0];//
+            x.classList.contains('newClassName'); //classList는 IE10 이후부터 적용가능 
+            console.log(x);
+        }
+
+        // innerHTML 테스트 
+        function inhtml(){
+            console.log(document.getElementById('wrap').innerHTML); //HTML 요소 안에 접근
+            document.getElementById('wrap').innerHTML = "<strong>서비스가 종료 되었습니다.</strong>"
+        }
+
+        function set() {
+            document.getElementsByClassName('set')[0].setAttribute('class', 'color')
+        }
+        function get() {
+            var x = document.getElementsByTagName('a')[1].getAttribute('href');
+            alert(x);
+        }
+
+        //hasAttribute / removeAttribute
+        function remo() {
+            document.getElementsByClassName('remove')[0].removeAttribute('class');            
+        }
+        function has() {
+            var x = document.getElementsByClassName('remove')[0].hasAttribute('class');
+            // console.log(x);
+            alert(x);
+        }
+
+    </script>
+
+    <style>
+        .color{
+            color: red;
+            font-size: 20px;
+        }
+        .remove{
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- getElementById : 아이디로 접근 -->
+    <p id="getId">getElementById 입니다</p>
+    <button onclick="getId()">ID확인</button>
+
+    <!-- getElementsByTagName : 태그명으로 접근 -->
+    <div>getElementsByTagName입니다</div>
+    <button onclick="getTag()">Tag확인</button>
+
+    <!-- getElementsByClassName : 클래스명으로 접근 -->
+    <div>
+        클래스 선택자를 호출 합니다<br>
+        <strong class="text">getElementsByClassName</strong>
+    </div>
+    <button onclick="classBtn()">ClassName 확인</button><br>
+
+    <!-- getElementsByName : Name으로 접근 -->
+    Id : <input type="text" name="dom"/><br/>
+    password : <input type="password" name="dom"/><br>
+    <button onclick="nameBtn()">name 확인</button>
+
+    <!-- className -->
+    <div class="divText">classname은 클래스의 이름을 변경/추가 할 수 있다.</div>
+    <button onclick="classBtn_add()">className 추가하기</button>
+    <button onclick="classBtn_remove()">className 삭제하기</button>
+    <button onclick="classBtn_toggle()">className toggle 테스트</button>
+    <button onclick="classBtn_contains()">className 테스트</button>
+
+    <!-- innerHTML 테스트  -->
+    <div id="wrap">
+        <a href="#">Naver</a>
+    </div>
+    <button onclick="inhtml()">innerHTML 확인하기</button>
+
+    <!-- getAttribute setAttribute --> 
+    <div class="set">
+        setAttribute
+    </div>
+
+    <div class="get">
+        <a href="https://www.naver.com" title="새창" target="_blank">Naver</a>
+    </div>
+
+    <button onclick="set()">SET 확인</button>
+    <button onclick="get()">GET 확인</button>
+
+    <!-- hasAttribute / removeAttribute -->
+    <p class="remove">removeAttribute:속성을 제거 합니다.</p>
+    <button onclick="remo()">remove</button>
+    <button onclick="has()">has</button>
+
+</body>
+</html>
